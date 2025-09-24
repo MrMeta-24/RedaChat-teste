@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedaChat</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-robot"></i>
+                <h2>RedaChat</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" id="new-chat-btn">
+                    <i class="fas fa-plus"></i>
+                    Nova Redação
+                </a>
+                <div class="nav-section">
+                    <span class="section-title">Análises Anteriores</span>
+                    <div id="previous-chats-container">
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-file-alt"></i>
+                            Redação sobre Tecnologia
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-file-alt"></i>
+                            Redação sobre Meio Ambiente
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-file-alt"></i>
+                            Redação sobre Educação
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="login-btn">
+                    <i class="fas fa-user-circle"></i>
+                    Entrar
+                </button>
+            </div>
+        </aside>
+
+        <div class="chat-container">
+            <header class="header">
+                <h1 id="chat-title">Nova Analise</h1>
+                <div class="header-actions">
+                    </div>
+            </header>
+
+            <main class="chat-area">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            Olá! Sou o seu assistente de correção de redações. Cole seu texto, faça o upload de um PDF ou **digitalize uma imagem** para eu te ajudar!
+                        </div>
+                    </div>
+                </div>
+            </main>
+    
+            <div class="input-area">
+                <div class="input-actions">
+                    <button class="action-btn" id="pdf-upload-btn" title="Anexar PDF">
+                        <i class="fas fa-file-pdf"></i>
+                    </button>
+                    <button class="action-btn" id="image-upload-btn" title="Digitalizar Imagem">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <textarea id="user-input" placeholder="Digite sua redação ou pergunta..." rows="1"></textarea>
+                <button class="send-btn" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn login-close">&times;</span>
+            <h2>Faça login</h2>
+            <form id="login-form">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="new-chat-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn chat-close">&times;</span>
+            <h2>Criar nova Analise</h2>
+            <form id="new-chat-form">
+                <label for="chat-name">Dê um nome para a sua redação:</label>
+                <input type="text" id="chat-name" name="chat-name" required>
+                <button type="submit">Criar e iniciar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
